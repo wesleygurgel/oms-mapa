@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/wesleygurgel/oms-mapa/static/css/main.c6414973.css",
+    "main.js": "/wesleygurgel/oms-mapa/static/js/main.6ad747c9.js",
+    "static/js/453.373f4ced.chunk.js": "/wesleygurgel/oms-mapa/static/js/453.373f4ced.chunk.js",
+    "index.html": "/wesleygurgel/oms-mapa/index.html",
+    "main.c6414973.css.map": "/wesleygurgel/oms-mapa/static/css/main.c6414973.css.map",
+    "main.6ad747c9.js.map": "/wesleygurgel/oms-mapa/static/js/main.6ad747c9.js.map",
+    "453.373f4ced.chunk.js.map": "/wesleygurgel/oms-mapa/static/js/453.373f4ced.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c6414973.css",
+    "static/js/main.6ad747c9.js"
+  ]
+}
