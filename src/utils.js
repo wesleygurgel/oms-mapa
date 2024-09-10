@@ -35,7 +35,7 @@ export const toggleFullscreen = (isFullscreen, setIsFullscreen, mapRef) => {
 // Função para buscar dados do país com base no id
 export const getCountryInfo = (id, countryData) => {
     if (countryData) {
-        return countryData.find((country) => country.id === id);
+        return countryData.find((country) => country.CountryID === id);
     }
     return null;
 };

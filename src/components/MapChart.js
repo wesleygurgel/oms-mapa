@@ -4,6 +4,7 @@ import FullScreenButton from "./FullScreenButton";
 import CountryLegend from "./CountryLegend";
 import { toggleFullscreen, getCountryInfo } from "../utils";
 import { Tooltip } from "react-tooltip";
+import FetchCSVData from "../utils/FetchCSVData";
 
 const geoUrl = "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson";
 
@@ -13,16 +14,31 @@ const MapChart = () => {
     const [isFullscreen, setIsFullscreen] = useState(false);
     const [content, setContent] = useState(""); // Mover o estado do conteúdo do tooltip para cá
     const mapRef = useRef(); // Referência para o mapa
+    const sheetURL =
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vRZdilNUPBuOgAh1C-kfY0JcFpxB3pHzSmaNxJvAVzulgupXfT-NeHKimlJSbPkmlS6nZBY8T1aZGLP/pub?output=csv";
 
     // Carregar o JSON com dados dos países
     useEffect(() => {
-        fetch("/data.json")
-            .then((response) => response.json())
-            .then((data) => setCountryData(data));
+        const fetchData = async () => {
+            const CSVData = await FetchCSVData(sheetURL);
+            console.log(CSVData);
+            setCountryData(CSVData);
+        };
+
+        fetchData();
     }, []);
 
     return (
-        <div style={{ position: "relative", height: "100%", width: "100%", overflow: "hidden", backgroundColor: isFullscreen ? "white" : "initial" }} ref={mapRef}>
+        <div
+            style={{
+                position: "relative",
+                height: "100%",
+                width: "100%",
+                overflow: "hidden",
+                backgroundColor: isFullscreen ? "white" : "initial",
+            }}
+            ref={mapRef}
+        >
             {/* Botão para alternar para o modo fullscreen */}
             <FullScreenButton
                 isFullscreen={isFullscreen}

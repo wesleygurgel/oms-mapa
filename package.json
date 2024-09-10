@@ -2,7 +2,7 @@
   "name": "oms-mapa",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/wesleygurgel/oms-mapa",
+  "homepage": "https://wesleygurgel.github.io/oms-mapa/",
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.3",

@@ -20,25 +20,25 @@ const CountryLegend = ({ selectedCountry }) => {
             {/* Nome do País */}
             <Flex alignItems="center" mb={2}>
                 <Icon as={FaFlag} color="teal.500" mr={2} />
-                <Text fontWeight="bold">{selectedCountry.name}</Text>
+                <Text fontWeight="bold">{selectedCountry.CountryName}</Text>
             </Flex>
 
             {/* População */}
             <Flex alignItems="center" mb={2}>
                 <Icon as={FaUsers} color="teal.500" mr={2} />
-                <Text>Population: {selectedCountry.population}</Text>
+                <Text>Population: {selectedCountry.Population}</Text>
             </Flex>
 
             {/* Capital */}
             <Flex alignItems="center" mb={2}>
                 <Icon as={FaCity} color="teal.500" mr={2} />
-                <Text>Capital: {selectedCountry.capital}</Text>
+                <Text>Capital: {selectedCountry.Capital}</Text>
             </Flex>
 
             {/* Idioma */}
             <Flex alignItems="center">
                 <Icon as={FaLanguage} color="teal.500" mr={2} />
-                <Text>Language: {selectedCountry.language}</Text>
+                <Text>Language: {selectedCountry.Language}</Text>
             </Flex>
         </Box>
     );
