@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Text, Flex, Icon } from "@chakra-ui/react";
-import { FaFlag, FaUsers, FaCity, FaLanguage } from "react-icons/fa"; // Importando ícones do react-icons
+import { FaFlag, FaUsers, FaVirus, FaSkull } from "react-icons/fa"; // Importando ícones do react-icons
 
 const CountryLegend = ({ selectedCountry }) => {
     if (!selectedCountry) return null;
@@ -15,31 +15,39 @@ const CountryLegend = ({ selectedCountry }) => {
             borderWidth="1px"
             borderRadius="md"
             boxShadow="lg"
-            textAlign="left" // Alinha o texto à esquerda
+            textAlign="left"
         >
             {/* Nome do País */}
-            <Flex alignItems="center" mb={2}>
-                <Icon as={FaFlag} color="teal.500" mr={2} />
-                <Text fontWeight="bold">{selectedCountry.CountryName}</Text>
-            </Flex>
+            {selectedCountry.CountryName && (
+                <Flex alignItems="center" mb={2}>
+                    <Icon as={FaFlag} color="teal.500" mr={2} />
+                    <Text fontWeight="bold">{selectedCountry.CountryName}</Text>
+                </Flex>
+            )}
 
             {/* População */}
-            <Flex alignItems="center" mb={2}>
-                <Icon as={FaUsers} color="teal.500" mr={2} />
-                <Text>Population: {selectedCountry.Population}</Text>
-            </Flex>
+            {selectedCountry.População && (
+                <Flex alignItems="center" mb={2}>
+                    <Icon as={FaUsers} color="teal.500" mr={2} />
+                    <Text>População: {selectedCountry.População}</Text>
+                </Flex>
+            )}
 
-            {/* Capital */}
-            <Flex alignItems="center" mb={2}>
-                <Icon as={FaCity} color="teal.500" mr={2} />
-                <Text>Capital: {selectedCountry.Capital}</Text>
-            </Flex>
+            {/* Infectados */}
+            {selectedCountry.Infectados && (
+                <Flex alignItems="center" mb={2}>
+                    <Icon as={FaVirus} color="red.500" mr={2} />
+                    <Text>Infectados: {selectedCountry.Infectados}</Text>
+                </Flex>
+            )}
 
-            {/* Idioma */}
-            <Flex alignItems="center">
-                <Icon as={FaLanguage} color="teal.500" mr={2} />
-                <Text>Language: {selectedCountry.Language}</Text>
-            </Flex>
+            {/* Óbitos */}
+            {selectedCountry.Óbitos && (
+                <Flex alignItems="center">
+                    <Icon as={FaSkull} color="gray.600" mr={2} />
+                    <Text>Óbitos: {selectedCountry.Óbitos}</Text>
+                </Flex>
+            )}
         </Box>
     );
 };
