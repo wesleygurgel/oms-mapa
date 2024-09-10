@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, Text, Flex, Icon } from "@chakra-ui/react";
 import { FaFlag, FaUsers, FaVirus, FaSkull } from "react-icons/fa"; // Importando ícones do react-icons
+import { FlagIcon } from "react-flag-kit";
+
 
 const CountryLegend = ({ selectedCountry }) => {
     if (!selectedCountry) return null;
@@ -17,10 +19,14 @@ const CountryLegend = ({ selectedCountry }) => {
             boxShadow="lg"
             textAlign="left"
         >
-            {/* Nome do País */}
+            {/* Nome do País com Bandeira Dinâmica */}
             {selectedCountry.CountryName && (
                 <Flex alignItems="center" mb={2}>
-                    <Icon as={FaFlag} color="teal.500" mr={2} />
+                    {selectedCountry.CountryISOCode ? (
+                        <FlagIcon code={selectedCountry.CountryISOCode} size={24} className="mr-2" />
+                    ) : (
+                        <Icon as={FaFlag} color="teal.500" mr={2} />
+                    )}
                     <Text fontWeight="bold">{selectedCountry.CountryName}</Text>
                 </Flex>
             )}
